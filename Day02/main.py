@@ -28,6 +28,7 @@ if __name__ == '__main__':
     green = 13
     blue = 14
     sum_of_games = 0
+    power_of_sets = 0
 
     for i, game in enumerate(games):
         counting = True
@@ -50,4 +51,25 @@ if __name__ == '__main__':
         if(counting == True):
             sum_of_games += (i+1)
 
-    print(sum_of_games)
+    print("Sum of numbers of possible games: " + str(sum_of_games))
+
+    for game in games:
+        power = 0
+        red = 0
+        green = 0
+        blue = 0
+        for reveal in game:
+            for rev in reveal:
+                if(rev[1] == "red"):
+                    if(int(rev[0]) > red):
+                        red = int(rev[0])
+                elif(rev[1] == "green"):
+                    if(int(rev[0]) > green):
+                        green = int(rev[0])
+                elif(rev[1] == "blue"):
+                    if(int(rev[0]) > blue):
+                        blue = int(rev[0])
+
+        power_of_sets += (red * green * blue)
+
+    print("Sum of power of games: " + str(power_of_sets))
