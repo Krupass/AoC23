@@ -100,7 +100,17 @@ if __name__ == '__main__':
                 print("Error")
                 raise EnvironmentError
 
-    # print(seeds)
+    sds = []
+    for i, seed in enumerate(seeds):
+        if((i % 2) == 0):
+            temp = int(seeds[i + 1]) - 1
+            while(temp >= 0):
+                print(int(seeds[i]) + temp)
+                sds.append(int(seeds[i]) + temp)
+                temp -= 1
+
+    seeds = sds
+    print(seeds)
     # print(seed_to_soil)
     # print(soil_to_fert)
     # print(fert_to_water)

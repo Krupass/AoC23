@@ -5,5 +5,7 @@ def e2e(value, field):
         range = int(record[2])
         if(int(value) >= first and int(value) < (first + range)):
             ret = (int(value) - first) + last
+            print(ret)
             return ret
+    print(value)
     return int(value)
