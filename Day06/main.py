@@ -32,6 +32,18 @@ if __name__ == '__main__':
                 for j, dist in enumerate(tmp):
                     inputs[j].append(int(dist))
 
+    time = ""
+    dist = ""
+    tmp = []
+    for input in inputs:
+        time += input[0]
+        dist += str(input[1])
+
+    tmp.append(int(time))
+    tmp.append(int(dist))
+    inputs = []
+    inputs.append(tmp)
+
     ways = number_of_ways(inputs)
     result = 1
     print(ways)
